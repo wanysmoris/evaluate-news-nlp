@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Natural Language processing</title>
+		<link rel="stylesheet" src="/styles/resets.scss" />
+		<link rel="stylesheet" src="/styles/base.scss" />
+		<link rel="stylesheet" src="/styles/header.scss" />
+		<link rel="stylesheet" src="/styles/form.scss" />
+		<link rel="stylesheet" src="/styles/footer.scss" />
+
+	<body>
+		<header>
+			<div class="title">Evaluating a News post using the MeaningCloud API</div>
+		</header>
+
+		<main>
+			<div id="app">
+				<section class="form-container">
+					<form class="" id="submitx" onsubmit="return Client.handleSubmit(event)">
+						<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
+						<button class="btn" type="submit" id="submit" value="Analysis" onclick="return Client.handleSubmit(event)"
+							onsubmit="return Client.handleSubmit(event)">Analysis</button>
+					</form>
+					<div class="error_message" id="errorMessage"></div>
+				</section>
+
+				<section class="results">
+					<div class="holder-entry">
+						<div class="result-title" id="entryHolder"><strong>See bellow the results👇 </strong></div>
+						<div id="polarity"></div>
+						<div id="agreement"></div>
+						<div id="subjectivity"></div>
+						<div id="confidence"></div>
+						<div id="irony"></div>
+					</div>
+		</main>
+		<script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/service-worker.js")
+						.then((registration) => {
+							console.log("SW registered: ", registration);
+						})
+						.catch((registrationError) => {
+							console.log("SW registration failed: ", registrationError);
+						});
+				});
+			}
+
+		</script>
+		<footer>
+    <div class= "footer">
+			<p class="footer-text">Copyright 2021 © Alina Goiea</p>
+         <div class="social-media">
+            <a class="social" href="https://github.com/AlinaDev252"><img src="/assets/github.png" alt="github" /></a>
+            <a class="social" href="https://twitter.com/AGoiea"><img src="../assets/twitter.png" alt="twitter" /></a>
+        </div>
+    </div>
+		</footer>
+	</body>
+</html>
