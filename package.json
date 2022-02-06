@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.4",
+		"@babel/plugin-transform-modules-commonjs": "^7.16.8",
 		"@babel/preset-env": "^7.5.4",
 		"axios": "^0.21.1",
 		"babel-loader": "^8.0.6",
